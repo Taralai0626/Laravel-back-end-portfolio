@@ -18,7 +18,6 @@ class CreateAboutsTable extends Migration
             $table->string('title');
             $table->string('image')->nullable();
             $table->text('content');
-            $table->foreignId('type_id');
             $table->foreignId('user_id');
             $table->timestamps();
         });

@@ -20,7 +20,6 @@ class AboutFactory extends Factory
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
             'user_id' => User::all()->random(),
-            'type_id' => Type::all()->random(),
         ];
     }
 }
