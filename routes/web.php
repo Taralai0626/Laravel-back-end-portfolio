@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Project;
+use App\Models\Skill;
+use App\Models\About;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
@@ -22,7 +24,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome', [
-        'projects' => Project::all()
+        'projects' => Project::all(),
+        'skills' => Skill::all(),
+        'abouts' => About::all(),
+
     ]);
 });
 

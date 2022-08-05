@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Type;
 use App\Models\User;
 use App\Models\Project;
+use App\Models\Skill;
+use App\Models\About;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,35 @@ Route::get('/projects/profile/{project?}', function(Project $project){
 
 });
 
+Route::get('/skills', function(){
+
+    $skills = Skill::orderBy('created_at')->get();
+
+    foreach($skills as $key => $skill)
+    {
+        $skills[$key]['user'] = User::where('id', $skill['user_id'])->first();
+        
+
+        if($skill['image'])
+        {
+            $skills[$key]['image'] = env('APP_URL').'storage/'.$skill['image'];
+        }
+    }
+
+    return $skills;
+
+});
+
+Route::get('/skills/skill/{skill?}', function(Skill $skill){
+
+    $skill['user'] = User::where('id', $skill['user_id'])->first();
+    
+
+    if($skill['image'])
+    {
+        $skill['image'] = env('APP_URL').'storage/'.$skill['image'];
+    }
+
+    return $skill;
+
+});

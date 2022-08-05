@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'title',
+        'url',
+        'percent',
+        'user_id',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(USer::class, 'user_id');
+    }
 }

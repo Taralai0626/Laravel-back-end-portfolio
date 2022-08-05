@@ -2,14 +2,38 @@
 <?= view('layout.header') ?>
 
 <section class="w3-padding">
-        
+
+    <section class="w3-padding w3-container">
+
     <h2 class="w3-text-blue">About Me!</h2>
 
-    <p>
-        Quisque felis ex, pellentesque vel elementum eu, bibendum vel massa. Donec id feugiat 
-        erat. Aliquam commodo rutrum velit, vitae vestibulum purus ullamcorper vestibulum. Orci 
-        varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </p>
+    <?php foreach($abouts as $about): ?>
+
+        <div class="w3-card w3-margin">
+
+            <div class="w3-container w3-blue">
+
+                <h3><?= $about->title ?></h3>
+
+            </div>
+            
+            <?php if($about->image): ?>
+                <div class="w3-container w3-margin-top">
+                    <img src="<?= asset('storage/'.$about->image) ?>" width="200">
+                </div>
+            <?php endif; ?>
+
+            <div class="w3-container w3-padding">
+            <h3><?= $about->content ?></h3>
+               
+            </div>
+        
+
+        </div>
+
+    <?php endforeach; ?>
+
+</section>
 
     <h3>My Skills</h3>
 
@@ -66,6 +90,44 @@
 
 </section>
 
+<section class="w3-padding w3-container">
+
+    <h2 class="w3-text-blue">Skills</h2>
+
+    <?php foreach($skills as $skill): ?>
+
+        <div class="w3-card w3-margin">
+
+            <div class="w3-container w3-blue">
+
+                <h3><?= $skill->title ?></h3>
+
+            </div>
+            
+            <?php if($skill->image): ?>
+                <div class="w3-container w3-margin-top">
+                    <img src="<?= asset('storage/'.$skill->image) ?>" width="200">
+                </div>
+            <?php endif; ?>
+
+            <div class="w3-container w3-padding">
+
+                <?php if($skill->url): ?>
+                    View Project: <a href="<?= $skill->url ?>"><?= $skill->url ?></a>
+                <?php endif; ?>
+
+               
+
+                
+
+            </div>
+        
+
+        </div>
+
+    <?php endforeach; ?>
+
+</section>
 <hr>
 
 <section class="w3-padding">
