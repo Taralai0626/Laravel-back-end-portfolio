@@ -116,13 +116,8 @@
                     View Project: <a href="<?= $skill->url ?>"><?= $skill->url ?></a>
                 <?php endif; ?>
 
-               
-
-                
-
             </div>
         
-
         </div>
 
     <?php endforeach; ?>
