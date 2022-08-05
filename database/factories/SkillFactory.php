@@ -19,7 +19,6 @@ class SkillFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'url' => $this->faker->url,
-            'slug' => $this->faker->slug,
             'percent' => $this->faker->numberBetween(0, 100),
             'user_id' => User::all()->random(),
         ];

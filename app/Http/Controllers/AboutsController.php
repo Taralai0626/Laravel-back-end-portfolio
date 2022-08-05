@@ -27,9 +27,7 @@ class AboutsController extends Controller
 
     public function addForm()
     {
-        return view('abouts.add', [
-            'abouts' => About::all(),
-        ]);
+        return view('abouts.add');
     }
     
     public function add()

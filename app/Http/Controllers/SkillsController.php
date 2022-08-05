@@ -27,9 +27,7 @@ class SkillsController extends Controller
 
     public function addForm()
     {
-        return view('skills.add', [
-            'skills' => Skill::all(),
-        ]);
+        return view('skills.add');
     }
     
     public function add()
@@ -37,14 +35,12 @@ class SkillsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'slug' => 'required|unique:skills|regex:/^[A-z\-]+$/',
             'url' => 'nullable|url',
             'percent' => 'required',
         ]);
 
         $skill = new Skill();
         $skill->title = $attributes['title'];
-        $skill->slug = $attributes['slug'];
         $skill->url = $attributes['url'];
         $skill->percent = $attributes['percent'];
         $skill->user_id = Auth::user()->id;
@@ -66,17 +62,11 @@ class SkillsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'slug' => [
-                'required',
-                Rule::unique('skills')->ignore($skill->id),
-                'regex:/^[A-z\-]+$/',
-            ],
             'url' => 'nullable|url',
             'percent' => 'required',
         ]);
 
         $skill->title = $attributes['title'];
-        $skill->slug = $attributes['slug'];
         $skill->url = $attributes['url'];
         $skill->percent = $attributes['percent'];
         $skill->save();

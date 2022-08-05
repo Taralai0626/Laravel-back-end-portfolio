@@ -17,7 +17,6 @@ class CreateSkillsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('url')->nullable();
-            $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->integer('percent')->nullable();
             $table->foreignId('user_id');

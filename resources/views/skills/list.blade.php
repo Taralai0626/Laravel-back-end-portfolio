@@ -10,7 +10,7 @@
                 <tr class="w3-red">
                     <th></th>
                     <th>Title</th>
-                    <th>Slug</th>
+                    <th>Url</th>
                     <th>Percent</th>
                     <th>Type</th>
                     <th>Created</th>
@@ -26,11 +26,7 @@
                             <?php endif; ?>
                         </td>
                         <td><?= $skill->title ?></td>
-                        <td>
-                            <a href="/skill/<?= $skill->slug ?>">
-                                <?= $skill->slug ?>
-                            </a>
-                        </td>
+                        <td><?= $skill->url ?></td>
                         <td><?= $skill->percent ?></td>
                         <td><?= $skill->created_at->format('M j, Y') ?></td>
                         <td><a href="/console/skills/image/<?= $skill->id ?>">Image</a></td>

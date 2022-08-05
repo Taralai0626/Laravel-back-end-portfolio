@@ -31,16 +31,6 @@
                 </div>
 
                 <div class="w3-margin-bottom">
-                    <label for="slug">Slug:</label>
-                    <input type="text" name="slug" id="slug" value="<?= old('slug', $skill->slug) ?>" required>
-
-                    <?php if($errors->first('slug')): ?>
-                        <br>
-                        <span class="w3-text-red"><?= $errors->first('slug'); ?></span>
-                    <?php endif; ?>
-                </div>
-
-                <div class="w3-margin-bottom">
                     <label for="percent">Percent:</label>
                     <textarea name="percent" id="percent" required><?= old('content', $skill->percent) ?></textarea>
 
