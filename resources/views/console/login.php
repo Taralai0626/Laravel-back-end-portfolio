@@ -29,7 +29,7 @@
 
             <form method="post" action="/console/login" novalidate>
 
-                <?= csrf_field() ?>
+                <?= csrf_field() ?> <!-- CSRF = Cross-Site-Request-Forgery -->
 
                 <div class="w3-margin-bottom">
                     <label for="email">Email Address:</label>

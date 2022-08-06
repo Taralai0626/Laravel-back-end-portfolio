@@ -167,7 +167,7 @@
     <!-- Displays profile links (ex. GitHub, LinkedIn, etc) from database. -->
     <?php foreach($profilelinks as $profilelink): ?>
         <!-- Profile Links -->
-        <a href="/profilelink/<?= $profilelink->url ?>" class="profile-link">
+        <a href="<?= $profilelink->url ?>" class="profile-link">
             <!-- Show profile link icon (ex. GitHub icon). -->
             <?php if($profilelink->image): ?>
                 <img src="<?= asset('storage/images/'.$profilelink->image) ?>" width="200">

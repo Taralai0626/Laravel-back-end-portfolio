@@ -48,8 +48,8 @@ Route::get('/project/{project:slug}', function (Project $project) {
 
 
 Route::get('/console/logout', [ConsoleController::class, 'logout'])->middleware('auth');
-Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest');
-Route::post('/console/login', [ConsoleController::class, 'login'])->middleware('guest');
+Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest')->name('login'); // Display login form.
+Route::post('/console/login', [ConsoleController::class, 'login'])->middleware('guest'); // Process login form.
 Route::get('/console/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth');
 
 Route::get('/console/projects/list', [ProjectsController::class, 'list'])->middleware('auth');
