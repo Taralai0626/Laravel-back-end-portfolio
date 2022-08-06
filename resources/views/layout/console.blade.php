@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Portfolio</title>
+        <title>My Portfolio | Console</title>
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="/app.css">
@@ -20,9 +20,12 @@
 
             @if(Auth::check())
                 You are logged in as {{ auth()->user()->first }} {{auth()->user()->last}} 
-                <a href="/console/logout">Log Out</a> | 
-                <a href="/console/dashboard">Dashboard</a> | 
-                <a href="/">Website Home Page</a>
+                <br>
+                <div class="nav-console">
+                    <a href="/console/logout">Log Out</a> | 
+                    <a href="/console/dashboard">Dashboard</a> | 
+                    <a href="/">Website Home Page</a>
+                </div>
             @else:
                 <a href="/">Return to My Portfolio</a>
             @endif

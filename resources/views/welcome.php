@@ -135,6 +135,19 @@
         Email: <a href="mailto:email@address.com">email@address.com</a>
     </p>
 
+    <!-- Displays profile links (ex. GitHub, LinkedIn, etc) from database. -->
+    <?php foreach($profilelinks as $profilelink): ?>
+        <!-- Profile Links -->
+        <a href="/profilelink/<?= $profilelink->url ?>" class="profile-link">
+            <!-- Show profile link icon (ex. GitHub icon). -->
+            <?php if($profilelink->image): ?>
+                <img src="<?= asset('storage/images/'.$profilelink->image) ?>" width="200">
+            <?php endif; ?>
+            <!-- Show profile link name. -->
+            <?= $profilelink->name ?>
+        </a>
+    <?php endforeach; ?>
+
 </section>
 
 <?= view('layout.footer') ?>

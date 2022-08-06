@@ -3,12 +3,14 @@
 use App\Models\Project;
 use App\Models\Skill;
 use App\Models\About;
+use App\Models\Profilelink;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\AboutsController;
+use App\Http\Controllers\ProfileLinksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +29,7 @@ Route::get('/', function () {
         'projects' => Project::all(),
         'skills' => Skill::all(),
         'abouts' => About::all(),
+        'profilelinks' => Profilelink::all(),
 
     ]);
 });
@@ -36,6 +39,14 @@ Route::get('/project/{project:slug}', function (Project $project) {
         'project' => $project
     ]);
 })->where('project', '[A-z\-]+');
+
+/*
+Route::get('/profilelink/{profilelink:slug}', function (Profilelink $profilelink) {
+    return view('profilelink', [
+        'profilelink' => $profilelink
+    ]);
+})->where('profilelink', '[A-z\-]+');
+*/
 
 Route::get('/console/logout', [ConsoleController::class, 'logout'])->middleware('auth');
 Route::get('/console/login', [ConsoleController::class, 'loginForm'])->middleware('guest');
@@ -82,3 +93,13 @@ Route::get('/console/abouts/edit/{about:id}', [AboutsController::class, 'editFor
 Route::post('/console/abouts/edit/{about:id}', [AboutsController::class, 'edit'])->where('about', '[0-9]+')->middleware('auth');
 Route::get('/console/abouts/image/{about:id}', [AboutsController::class, 'imageForm'])->where('about', '[0-9]+')->middleware('auth');
 Route::post('/console/abouts/image/{about:id}', [AboutsController::class, 'image'])->where('about', '[0-9]+')->middleware('auth');
+
+// Profile Links CRUD.
+Route::get('/console/profilelinks/list', [ProfileLinksController::class, 'list'])->middleware('auth');
+Route::get('/console/profilelinks/add', [ProfileLinksController::class, 'addForm'])->middleware('auth');
+Route::post('/console/profilelinks/add', [ProfileLinksController::class, 'add'])->middleware('auth');
+Route::get('/console/profilelinks/edit/{profilelink:id}', [ProfileLinksController::class, 'editForm'])->where('profilelink', '[0-9]+')->middleware('auth');
+Route::post('/console/profilelinks/edit/{profilelink:id}', [ProfileLinksController::class, 'edit'])->where('profilelink', '[0-9]+')->middleware('auth');
+Route::get('/console/profilelinks/delete/{profilelink:id}', [ProfileLinksController::class, 'delete'])->where('profilelink', '[0-9]+')->middleware('auth');
+Route::get('/console/profilelinks/image/{profilelink:id}', [ProfileLinksController::class, 'imageForm'])->where('profilelink', '[0-9]+')->middleware('auth');
+Route::post('/console/profilelinks/image/{profilelink:id}', [ProfileLinksController::class, 'image'])->where('profilelink', '[0-9]+')->middleware('auth');
