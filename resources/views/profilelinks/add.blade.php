@@ -12,7 +12,7 @@
 
                 <div class="w3-margin-bottom">
                     <label for="name">Name:</label>
-                    <input type="name" name="name" id="name" value="<?= old('name') ?>" required>
+                    <input type="text" name="name" id="name" value="<?= old('name') ?>" required>
                     
                     <?php if($errors->first('name')): ?>
                         <br>

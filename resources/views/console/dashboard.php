@@ -43,6 +43,7 @@
                 <li><a href="/console/abouts/list">Manage Abouts</a></li>
                 <li><a href="/console/skills/list">Manage Skills</a></li>
                 <li><a href="/console/profilelinks/list">Manage Profile Links</a></li>
+                <li><a href="/console/education/list">Manage Education Entries</a></li>
                 <li><a href="/console/logout">Log Out</a></li>
             </ul>
 

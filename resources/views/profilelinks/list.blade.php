@@ -30,7 +30,9 @@
                                 <?= $profilelink->url ?>
                             </a>
                         </td>
-                        <td><?= $profilelink->created_at->format('M j, Y') ?></td>
+                        <td><?= $profilelink->created_at->format('M j, Y, G:i (T)') ?></td>
+                        <td><?= $profilelink->updated_at->format('M j, Y, G:i (T)') ?></td>
+                        <!-- Documentation for format() is at https://www.php.net/manual/en/datetime.format.php -->
                         <td><a href="/console/profilelinks/image/<?= $profilelink->id ?>">Image</a></td>
                         <td><a href="/console/profilelinks/edit/<?= $profilelink->id ?>">Edit</a></td>
                         <td><a href="/console/profilelinks/delete/<?= $profilelink->id ?>">Delete</a></td>

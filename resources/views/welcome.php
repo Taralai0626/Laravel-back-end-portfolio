@@ -123,6 +123,35 @@
     <?php endforeach; ?>
 
 </section>
+
+<section class="w3-padding w3-container">
+
+    <h2 class="w3-text-blue">Résumé</h2>
+
+    <?php foreach($education as $education): ?>
+
+        <div class="w3-card w3-margin">
+
+            <div class="w3-container w3-blue">
+
+                <h3><?= $education->course_name ?></h3>
+
+            </div>
+
+            <div class="w3-container w3-blue-grey">
+
+                <p><?= $education->institution_name ?></p>
+                <p><?= $education->description ?></p>
+                <p><?= $education->date ?></p>
+
+            </div>
+        
+        </div>
+
+    <?php endforeach; ?>
+
+</section>
+
 <hr>
 
 <section class="w3-padding">
