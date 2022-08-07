@@ -21,7 +21,7 @@
                     <tr>
                         <td>
                             <?php if($profilelink->image): ?>
-                                <img src="<?= asset('storage/images/'.$profilelink->image) ?>" width="200">
+                                <img src="<?= asset('storage/'.$profilelink->image) ?>" width="200">
                             <?php endif; ?>
                         </td>
                         <td><?= $profilelink->name ?></td>
