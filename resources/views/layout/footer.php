@@ -4,9 +4,9 @@
 <footer class="w3-padding">
 
     Footer Text | 
-    Copyright <?= date('Y') ?> |
-    <a href="#">Facebook</a> | 
-    <a href="#">Instagram</a>
+    &copy; Copyright <?= date('Y') ?>
+    
+    <!-- !!! Find a way to connect profilelinks variable from controller to this footer pg to show profile links from database. !!! -->
 
     <br>
 

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Portfolio</title>
+        <title>My Portfolio | Dashboard</title>
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="/app.css">
@@ -19,10 +19,13 @@
             <h1 class="w3-text-red">Portfolio Console</h1>
 
             <?php if(Auth::check()): ?>
-                You are logged in as <?= auth()->user()->first ?> <?= auth()->user()->last ?> | 
-                <a href="/console/logout">Log Out</a> | 
-                <a href="/console/dashboard">Dashboard</a> | 
-                <a href="/">Website Home Page</a>
+                You are logged in as <?= auth()->user()->first ?> <?= auth()->user()->last ?>
+                <br>
+                <div class="nav-dashboard">
+                    <a href="/console/logout">Log Out</a> | 
+                    <a href="/console/dashboard">Dashboard</a> | 
+                    <a href="/">Website Home Page</a>
+                </div>
             <?php else: ?>
                 <a href="/">Return to My Portfolio</a>
             <?php endif; ?>
@@ -39,6 +42,8 @@
                 <li><a href="/console/users/list">Manage Users</a></li>
                 <li><a href="/console/abouts/list">Manage Abouts</a></li>
                 <li><a href="/console/skills/list">Manage Skills</a></li>
+                <li><a href="/console/profilelinks/list">Manage Profile Links</a></li>
+                <li><a href="/console/education/list">Manage Education Entries</a></li>
                 <li><a href="/console/logout">Log Out</a></li>
             </ul>
 
