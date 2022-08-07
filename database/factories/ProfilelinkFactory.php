@@ -18,7 +18,6 @@ class ProfilelinkFactory extends Factory
         return [
             'name' => $this->faker->word,
             'url' => $this->faker->url,
-            'image' => $this->faker->image('storage/images',600,600, null, false),
             'user_id' => User::all()->random(),
         ];
     }
