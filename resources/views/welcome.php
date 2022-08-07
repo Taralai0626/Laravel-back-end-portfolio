@@ -170,7 +170,7 @@
         <a href="<?= $profilelink->url ?>" class="profile-link">
             <!-- Show profile link icon (ex. GitHub icon). -->
             <?php if($profilelink->image): ?>
-                <img src="<?= asset('storage/images/'.$profilelink->image) ?>" width="200">
+                <img src="<?= asset('storage/'.$profilelink->image) ?>" width="25">
             <?php endif; ?>
             <!-- Show profile link name. -->
             <?= $profilelink->name ?>
