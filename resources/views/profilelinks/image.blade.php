@@ -8,7 +8,7 @@
 
             <div class="w3-margin-bottom">
                 <?php if($profilelink->image): ?>
-                    <img src="<?= asset('storage/images/'.$profilelink->image) ?>" width="200">
+                    <img src="<?= asset('storage/'.$profilelink->image) ?>" width="200">
                 <?php endif; ?>
             </div>
 
