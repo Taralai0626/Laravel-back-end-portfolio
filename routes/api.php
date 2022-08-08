@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Project;
 use App\Models\Skill;
 use App\Models\About;
+use App\Models\Education;
+use App\Models\Profilelink;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,5 +96,89 @@ Route::get('/skills/skill/{skill?}', function(Skill $skill){
     }
 
     return $skill;
+
+});
+
+Route::get('/abouts', function(){
+
+    $abouts = About::orderBy('created_at')->get();
+
+    foreach($abouts as $key => $about)
+    {
+        $abouts[$key]['user'] = User::where('id', $about['user_id'])->first();
+        
+        if($about['image'])
+        {
+            $abouts[$key]['image'] = env('APP_URL').'storage/'.$about['image'];
+        }
+    }
+
+    return $abouts;
+
+});
+
+Route::get('/abouts/profile/{about?}', function(About $about){
+
+    $about['user'] = User::where('id', $about['user_id'])->first();
+    
+    if($about['image'])
+    {
+        $about['image'] = env('APP_URL').'storage/'.$about['image'];
+    }
+
+    return $about;
+
+});
+
+Route::get('/profileLinks', function(){
+
+    $profileLinks = ProfileLink::orderBy('created_at')->get();
+
+    foreach($profileLinks as $key => $profileLink)
+    {
+        $profileLinks[$key]['user'] = User::where('id', $profileLink['user_id'])->first();
+
+        if($profileLink['image'])
+        {
+            $profileLinks[$key]['image'] = env('APP_URL').'storage/'.$profileLink['image'];
+        }
+    }
+
+    return $profileLinks;
+
+});
+
+Route::get('/profileLinks/profile/{profileLink?}', function(ProfileLink $profileLink){
+
+    $profileLink['user'] = User::where('id', $profileLink['user_id'])->first();
+   
+    if($profileLink['image'])
+    {
+        $profileLink['image'] = env('APP_URL').'storage/'.$profileLink['image'];
+    }
+
+    return $profileLink;
+
+});
+
+
+Route::get('/educations', function(){
+
+    $educations = Education::orderBy('created_at')->get();
+
+    foreach($educations as $key => $education)
+    {
+        $educations[$key]['user'] = User::where('id', $education['user_id'])->first();
+    }
+
+    return $educations;
+
+});
+
+Route::get('/educations/profile/{education?}', function(Education $education){
+
+    $education['user'] = User::where('id', $education['user_id'])->first();
+   
+    return $education;
 
 });
