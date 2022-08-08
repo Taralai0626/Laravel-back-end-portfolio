@@ -32,3 +32,14 @@ Full tutorial URL: https://codeadam.ca/learning/php-cms-laravel.html
 -   CMS dashboard login 1: TaraLai@test.com, password (which is $2y$10$j9etSLvqjcAabmUATLQOr.zv4FD6YoanEoyFYAu.lqSlwXoPBBgPu on the database table 'users')
 -   CMS dashboard login 2: sean.k.trudel@gmail.com, password (which is $2y$10$j9etSLvqjcAabmUATLQOr.zv4FD6YoanEoyFYAu.lqSlwXoPBBgPu on the database table 'users')
 -   GitHub repo: https://github.com/Taralai0626/Tara-Sean-lavarelAssign2.git
+
+Project responsibilites:
+- Tara Lai:
+  - GitHub repo setup
+  - CMS projects CRUD
+  - CMS skills CRUD
+  - CMS about CRUD
+- Sean Trudel:
+  - CMS profile links CRUD
+  - CMS education CRUD
+  - portfolio page profile links display feature
