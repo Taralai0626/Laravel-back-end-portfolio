@@ -26,7 +26,7 @@
                             <?php endif; ?>
                         </td>
                         <td><?= $skill->title ?></td>
-                        <td><?= $skill->url ?></td>
+                        <td><a href="<?= $skill->url ?>"><?= $skill->url ?></a></td>
                         <td><?= $skill->percent ?></td>
                         <td><?= $skill->created_at->format('M j, Y') ?></td>
                         <td><a href="/console/skills/image/<?= $skill->id ?>">Image</a></td>

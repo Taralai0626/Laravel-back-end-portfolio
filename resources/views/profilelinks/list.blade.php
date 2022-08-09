@@ -26,7 +26,7 @@
                         </td>
                         <td><?= $profilelink->name ?></td>
                         <td>
-                            <a href="/profilelink/<?= $profilelink->url ?>">
+                            <a href="<?= $profilelink->url ?>">
                                 <?= $profilelink->url ?>
                             </a>
                         </td>
