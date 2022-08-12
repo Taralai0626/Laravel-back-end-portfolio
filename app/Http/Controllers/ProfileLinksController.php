@@ -82,14 +82,13 @@ class ProfileLinksController extends Controller
     {
 
         $attributes = request()->validate([
-            'image' => 'required|image',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            ,
         ]);
-
-        Storage::delete($profilelink->image);
         
-        $path = request()->file('image')->store('profilelinks');
+        $path = request()->file('image')->store('profilelinks', 's3');
 
-        $profilelink->image = $path;
+        $profilelink->image = Storage::disk('s3')->url($path);
         $profilelink->save();
         
         return redirect('/console/profilelinks/list')

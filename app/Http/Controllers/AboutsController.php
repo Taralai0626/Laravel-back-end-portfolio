@@ -83,14 +83,13 @@ class AboutsController extends Controller
     {
 
         $attributes = request()->validate([
-            'image' => 'required|image',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        Storage::delete($about->image);
-        
-        $path = request()->file('image')->store('abouts');
+        Storage::delete(@$about->image);
+        $path = request()->file('image')->store('abouts', 's3');
 
-        $about->image = $path;
+        $about->image = Storage::disk('s3')->url($path);
         $about->save();
         
         return redirect('/console/abouts/list')

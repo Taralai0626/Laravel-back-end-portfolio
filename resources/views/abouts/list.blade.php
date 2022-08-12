@@ -20,7 +20,7 @@
           <tr>
             <td>
               <?php if($about->image): ?>
-                <img src="<?= asset('storage/'.$about->image) ?>" width="200">
+                <img src="{{$about->image}}" width="200">
               <?php endif; ?>
             </td>
             <td><?= $about->title ?></td>

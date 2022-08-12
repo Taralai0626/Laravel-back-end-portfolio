@@ -44,7 +44,7 @@ Route::get('/projects', function(){
 
         if($project['image'])
         {
-            $projects[$key]['image'] = env('APP_URL').'storage/'.$project['image'];
+            $projects[$key]['image'] = $project['image'];
         }
     }
 
@@ -59,7 +59,7 @@ Route::get('/projects/profile/{project?}', function(Project $project){
 
     if($project['image'])
     {
-        $project['image'] = env('APP_URL').'storage/'.$project['image'];
+        $project['image'] = $project['image'];
     }
 
     return $project;
@@ -77,7 +77,7 @@ Route::get('/skills', function(){
 
         if($skill['image'])
         {
-            $skills[$key]['image'] = env('APP_URL').'storage/'.$skill['image'];
+            $skills[$key]['image'] = $skill['image'];
         }
     }
 
@@ -92,7 +92,7 @@ Route::get('/skills/skill/{skill?}', function(Skill $skill){
 
     if($skill['image'])
     {
-        $skill['image'] = env('APP_URL').'storage/'.$skill['image'];
+        $skill['image'] = $skill['image'];
     }
 
     return $skill;
@@ -109,7 +109,7 @@ Route::get('/abouts', function(){
         
         if($about['image'])
         {
-            $abouts[$key]['image'] = env('APP_URL').'storage/'.$about['image'];
+            $abouts[$key]['image'] = $about['image'];
         }
     }
 
@@ -123,7 +123,7 @@ Route::get('/abouts/profile/{about?}', function(About $about){
     
     if($about['image'])
     {
-        $about['image'] = env('APP_URL').'storage/'.$about['image'];
+        $about['image'] = $about['image'];
     }
 
     return $about;
@@ -140,7 +140,7 @@ Route::get('/profileLinks', function(){
 
         if($profileLink['image'])
         {
-            $profileLinks[$key]['image'] = env('APP_URL').'storage/'.$profileLink['image'];
+            $profileLinks[$key]['image'] = $profileLink['image'];
         }
     }
 
@@ -154,7 +154,7 @@ Route::get('/profileLinks/profile/{profileLink?}', function(ProfileLink $profile
    
     if($profileLink['image'])
     {
-        $profileLink['image'] = env('APP_URL').'storage/'.$profileLink['image'];
+        $profileLink['image'] = $profileLink['image'];
     }
 
     return $profileLink;

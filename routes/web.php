@@ -13,7 +13,10 @@ use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\AboutsController;
 use App\Http\Controllers\ProfileLinksController;
 use App\Http\Controllers\EducationController;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;  
+use App\Http\Controllers\ImageUploadController;
+  
+  
 
 /*
 |--------------------------------------------------------------------------
@@ -110,3 +113,6 @@ Route::post('/console/education/add', [EducationController::class, 'add'])->midd
 Route::get('/console/education/edit/{education:id}', [EducationController::class, 'editForm'])->where('education', '[0-9]+')->middleware('auth');
 Route::post('/console/education/edit/{education:id}', [EducationController::class, 'edit'])->where('education', '[0-9]+')->middleware('auth');
 Route::get('/console/education/delete/{education:id}', [EducationController::class, 'delete'])->where('education', '[0-9]+')->middleware('auth');
+
+Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
+Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');

@@ -17,12 +17,12 @@
                     <th></th> <!-- 'Edit' button -->
                     <th></th> <!-- 'Delete' button -->
                 </tr>
-                <?php foreach($profilelinks as $profilelink): ?>
+                @foreach($profilelinks as $profilelink)
                     <tr>
                         <td>
-                            <?php if($profilelink->image): ?>
-                                <img src="<?= asset('storage/'.$profilelink->image) ?>" width="200">
-                            <?php endif; ?>
+                            @if($profilelink->image)
+                                <img src="{{$profilelink->image}} width="200">
+                            @endif
                         </td>
                         <td><?= $profilelink->name ?></td>
                         <td>
@@ -37,7 +37,7 @@
                         <td><a href="/console/profilelinks/edit/<?= $profilelink->id ?>">Edit</a></td>
                         <td><a href="/console/profilelinks/delete/<?= $profilelink->id ?>">Delete</a></td>
                     </tr>
-                <?php endforeach; ?>
+                @endforeach
             </table>
 
             <a href="/console/profilelinks/add" class="w3-button w3-green">Add New Profile Link</a>

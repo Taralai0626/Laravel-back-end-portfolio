@@ -22,7 +22,7 @@
                     <tr>
                         <td>
                             <?php if($skill->image): ?>
-                                <img src="<?= asset('storage/'.$skill->image) ?>" width="200">
+                                <img src="{{$skill->image}}" width="200">
                             <?php endif; ?>
                         </td>
                         <td><?= $skill->title ?></td>

@@ -86,16 +86,14 @@ class SkillsController extends Controller
     {
 
         $attributes = request()->validate([
-            'image' => 'required|image',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        Storage::delete($skill->image);
-        
-        $path = request()->file('image')->store('skills');
+        $path = request()->file('image')->store('skills', 's3');
 
-        $skill->image = $path;
+        $skill->image = Storage::disk('s3')->url($path);
         $skill->save();
-        
+
         return redirect('/console/skills/list')
             ->with('message', 'Skill image has been edited!');
     }

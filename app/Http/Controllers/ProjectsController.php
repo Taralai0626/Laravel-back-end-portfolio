@@ -103,14 +103,14 @@ class ProjectsController extends Controller
     {
 
         $attributes = request()->validate([
-            'image' => 'required|image',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         Storage::delete($project->image);
         
-        $path = request()->file('image')->store('projects');
+        $path = request()->file('image')->store('projects', 's3');
 
-        $project->image = $path;
+        $project->image = Storage::disk('s3')->url($path);
         $project->save();
         
         return redirect('/console/projects/list')
