@@ -20,9 +20,9 @@
                 @foreach($profilelinks as $profilelink)
                     <tr>
                         <td>
-                            @if($profilelink->image)
-                                <img src="{{$profilelink->image}} width="200">
-                            @endif
+                        @if($profilelink->image)
+                            <img src="{{$profilelink->image}}" width="200">
+                        @endif
                         </td>
                         <td><?= $profilelink->name ?></td>
                         <td>
