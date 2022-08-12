@@ -86,7 +86,6 @@ class AboutsController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        Storage::delete(@$about->image);
         $path = request()->file('image')->store('abouts', 's3');
 
         $about->image = Storage::disk('s3')->url($path);
