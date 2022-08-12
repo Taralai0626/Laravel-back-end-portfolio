@@ -4,14 +4,13 @@
 
         <section class="w3-padding">
 
-            <h2>Project Image</h2>
+            <h2>About Image</h2>
 
             <div class="w3-margin-bottom">
                 @if($project->image)
                     <img src="{{$project->image}}" width="200">
-                @php endif
+                @endif
             </div>
-
             <div class="container">
      
             <div class="panel panel-primary">
@@ -55,9 +54,9 @@
             </div>
             </div>
             </div>
-
-            <a href="/console/projects/list">Back to Project List</a>
+            
+        <a href="/console/projects/list">Back to About List</a>
 
         </section>
-
+             
 @endsection
