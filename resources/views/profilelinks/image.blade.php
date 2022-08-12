@@ -4,14 +4,13 @@
 
         <section class="w3-padding">
 
-            <h2>Profile Link Image/Icon</h2>
+            <h2>ProfileLink Image</h2>
 
             <div class="w3-margin-bottom">
                 @if($profilelink->image)
                     <img src="{{$profilelink->image}}" width="200">
                 @endif
             </div>
-
             <div class="container">
      
             <div class="panel panel-primary">
@@ -55,9 +54,9 @@
             </div>
             </div>
             </div>
-
-            <a href="/console/profilelinks/list">Back to Profile Links List</a>
+            
+        <a href="/console/profilelinks/list">Back to Profilelink List</a>
 
         </section>
-
+             
 @endsection

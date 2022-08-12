@@ -11,7 +11,6 @@
                     <img src="{{$skill->image}}" width="200">
                 @endif
             </div>
-
             <div class="container">
      
             <div class="panel panel-primary">
@@ -55,9 +54,9 @@
             </div>
             </div>
             </div>
-
-            <a href="/console/skills/list">Back to Skill List</a>
+            
+        <a href="/console/skills/list">Back to Skill List</a>
 
         </section>
-
+             
 @endsection

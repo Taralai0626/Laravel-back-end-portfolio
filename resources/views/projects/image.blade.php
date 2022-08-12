@@ -4,7 +4,7 @@
 
         <section class="w3-padding">
 
-            <h2>About Image</h2>
+            <h2>Project Image</h2>
 
             <div class="w3-margin-bottom">
                 @if($project->image)
@@ -55,7 +55,7 @@
             </div>
             </div>
             
-        <a href="/console/projects/list">Back to About List</a>
+        <a href="/console/projects/list">Back to Project List</a>
 
         </section>
              
