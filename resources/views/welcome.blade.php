@@ -171,7 +171,7 @@
             <!-- Show profile link icon (ex. GitHub icon). -->
             @if($profilelink->image)
                 <img src="{{ $profilelink->image }}" width="25">
-            endif
+            @endif
             <!-- Show profile link name. -->
             <?= $profilelink->name ?>
         </a>
