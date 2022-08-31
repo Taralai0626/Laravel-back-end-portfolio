@@ -22,7 +22,7 @@
 
                 <div class="w3-margin-bottom">
                     <label for="url">URL:</label>
-                    <input type="url" name="url" id="url" value="<?= old('url') ?>">
+                    <input type="text" name="url" id="url" value="<?= old('url') ?>">
 
                     <?php if($errors->first('url')): ?>
                         <br>
