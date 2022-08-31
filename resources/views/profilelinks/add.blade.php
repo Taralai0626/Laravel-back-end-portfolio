@@ -24,7 +24,7 @@
                     <label for="url">URL:</label>
                     <input type="text" name="url" id="url" value="<?= old('url') ?>">
 
-                    <?php if($errors->first('url')): ?>
+                    <?php if($errors->first('text')): ?>
                         <br>
                         <span class="w3-text-red"><?= $errors->first('text'); ?></span>
                     <?php endif; ?>
