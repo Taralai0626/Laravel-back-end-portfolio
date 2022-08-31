@@ -52,7 +52,7 @@ class ProfileLinksController extends Controller
 
         $attributes = request()->validate([
             'name' => 'required',
-            'url' => 'nullable|url',
+            'url' => 'nullable',
         ]);
 
         $profilelink->name = $attributes['name'];
