@@ -26,7 +26,7 @@
 
                     <?php if($errors->first('url')): ?>
                         <br>
-                        <span class="w3-text-red"><?= $errors->first('url'); ?></span>
+                        <span class="w3-text-red"><?= $errors->first('text'); ?></span>
                     <?php endif; ?>
                 </div>
 
