@@ -22,11 +22,11 @@
 
                 <div class="w3-margin-bottom">
                     <label for="url">URL:</label>
-                    <input type="text" name="url" id="url" value="<?= old('text') ?>">
+                    <input type="url" name="url" id="url" value="<?= old('url') ?>">
 
-                    <?php if($errors->first('text')): ?>
+                    <?php if($errors->first('url')): ?>
                         <br>
-                        <span class="w3-text-red"><?= $errors->first('text'); ?></span>
+                        <span class="w3-text-red"><?= $errors->first('url'); ?></span>
                     <?php endif; ?>
                 </div>
 
